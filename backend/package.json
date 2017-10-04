@@ -9,7 +9,8 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "windows-cpu": "^0.1.4"
   },
   "scripts": {
     "start": "node index.js",
