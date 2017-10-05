@@ -14,10 +14,13 @@ const enableCORS = (req, res, next) => {
     }
 }
 
+const hello = (req, res) => {
+  res.send({ hello: 'please go to /load endpoint' })
+}
 
 const app = express();
 app.use(enableCORS)
-
+app.get('/', hello)
 require('./src/cpuload')(app);
 
 // Get the port from the environment, i.e., Heroku sets it

@@ -9,12 +9,12 @@ const getLoad = (req, res) => {
         res.status(500).send({error: "something went wrong in windows"});
       } else {
         // loadArr (multi-cpu in percent) => [3, 10]
-        const sumLoad = loadArr.reduce((sum, value) => {
+        let sumLoad = loadArr.reduce((sum, value) => {
           return sum + value;
         }, 0)
         // change to percentage
         sumLoad /= 100;
-        const avgLoad = sumLoad / loadArr.length;
+        let avgLoad = sumLoad / loadArr.length;
         res.status(200).send({
           avgLoad: avgLoad,
           sumLoad: sumLoad,
