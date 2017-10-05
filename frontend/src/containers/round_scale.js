@@ -18,8 +18,9 @@ class RoundScale extends Component {
   render() {
     return (
       <div>
-        <h3>{this.props.load.load}</h3>
         <Slider load={this.props.load.load} maxLoad={1} />
+        <br />
+        <h4>Current: {(this.props.load.load * 100).toFixed(4)}%</h4>
       </div>
     )
   }

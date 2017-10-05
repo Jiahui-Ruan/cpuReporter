@@ -9,14 +9,14 @@ export default class Slider extends Component {
     const self = this;
     $("#slider").roundSlider({
         sliderType: "min-range",
-        editableTooltip: false,
+        showTooltip: false,
+        readOnly: false,
         radius: 105,
         width: 16,
-        value: self.props.load / self.props.maxLoad * 100,
+        value: self.props.load * 100,
         handleSize: 0,
-        handleShape: "square",
         circleShape: "half-top",
-        tooltipFormat: "changeTooltip"
+        max: self.props.maxLoad * 100
     });
   }
 

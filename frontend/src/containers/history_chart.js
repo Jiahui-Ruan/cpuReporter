@@ -9,7 +9,7 @@ class HistoryChart extends Component {
 
   render() {
     return (
-      <Chart data={this.props.history.history} color="black" units="%" />
+      <Chart data={this.props.history.history} color="black"/>
     )
   }
 }
