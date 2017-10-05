@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
 export default class Slider extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidUpdate() {
+    const self = this;
     $("#slider").roundSlider({
         sliderType: "min-range",
         editableTooltip: false,
         radius: 105,
         width: 16,
-        value: 75,
+        value: self.props.load / self.props.maxLoad * 100,
         handleSize: 0,
         handleShape: "square",
-        circleShape: "pie",
-        startAngle: 315,
+        circleShape: "half-top",
         tooltipFormat: "changeTooltip"
     });
   }

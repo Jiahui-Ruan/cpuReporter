@@ -19,7 +19,7 @@ class RoundScale extends Component {
     return (
       <div>
         <h3>{this.props.load.load}</h3>
-        <Slider />
+        <Slider load={this.props.load.load} maxLoad={1} />
       </div>
     )
   }
