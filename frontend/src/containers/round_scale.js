@@ -9,7 +9,7 @@ class RoundScale extends Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     setInterval(() => {
       this.props.fetchLoad();
     }, 1000)

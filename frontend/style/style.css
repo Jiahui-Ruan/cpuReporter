@@ -34,3 +34,8 @@
 #slider .rs-path-color  {
     background-color: #F0C5C5;
 }
+
+.chart {
+  width: 800px;
+  height: 400px;
+}
