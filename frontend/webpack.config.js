@@ -1,32 +1,26 @@
-const webpack = require('webpack');
-const path = require('path');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-
 module.exports = {
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    contentBase: './app',
-    port: 8080
-  },
-  entry: path.resolve(__dirname, 'app/main.js'),
+  entry: [
+    './src/index.js'
+  ],
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: __dirname,
     publicPath: '/',
-    filename: './bundle.js'
+    filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
-      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' }
-    ]
+    loaders: [{
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: {
+        presets: ['react', 'es2015', 'stage-1']
+      }
+    }]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['', '.js', '.jsx']
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
-  ]
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
+  }
 };

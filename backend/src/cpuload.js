@@ -1,20 +1,20 @@
-const os = require('os')
-const windowsCPU = require('windows-cpu')
+const os = require('os');
+const windowsCPU = require('windows-cpu');
 
 const getLoad = (req, res) => {
   if (os.type() == 'Windows_NT') {
     // Windows platform
     windowsCPU.totalLoad((err, loadArr) => {
       if (err) {
-        res.status(500).send({error: "something went wrong in windows"})
+        res.status(500).send({error: "something went wrong in windows"});
       } else {
         // loadArr (multi-cpu in percent) => [3, 10]
         const sumLoad = loadArr.reduce((sum, value) => {
-          return sum + value
+          return sum + value;
         }, 0)
         // change to percentage
-        sumLoad /= 100
-        const avgLoad = sumLoad / loadArr.length
+        sumLoad /= 100;
+        const avgLoad = sumLoad / loadArr.length;
         res.status(200).send({
           avgLoad: avgLoad,
           sumLoad: sumLoad,
