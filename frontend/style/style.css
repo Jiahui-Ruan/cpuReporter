@@ -17,7 +17,7 @@
   border-radius: 100px;
 }
 #slider .rs-range-color  {
-  background-image: linear-gradient(to right, #90EE90, #8B0000);
+  background-image: linear-gradient(to right, #90EE90, #FFFF00, #8B0000);
 }
 .row {
   margin-bottom: 1%;
@@ -25,4 +25,7 @@
 svg {
     height: 200px;
     width: 600px;
+}
+.btn.btn-primary {
+  margin-left: 20px;
 }

@@ -18,7 +18,7 @@ class RoundScale extends Component {
   render() {
     return (
       <div>
-        <Slider load={this.props.load.load} maxLoad={1} />
+        <Slider load={this.props.load.load} maxLoad={this.props.maxLoad.maxLoad} />
         <br />
         <h4>Current: {(this.props.load.load * 100).toFixed(4)}%</h4>
       </div>
@@ -26,8 +26,8 @@ class RoundScale extends Component {
   }
 }
 
-function mapStateToProps({ load }) {
-  return { load };
+function mapStateToProps({ load, maxLoad }) {
+  return { load, maxLoad };
 }
 
 function mapDispatchToProps(dispatch) {

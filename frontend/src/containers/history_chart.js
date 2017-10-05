@@ -9,13 +9,13 @@ class HistoryChart extends Component {
 
   render() {
     return (
-      <Chart data={this.props.history.history} color="black"/>
+      <Chart data={this.props.history.history} color="black" maxLoad={this.props.maxLoad.maxLoad}/>
     )
   }
 }
 
-function mapStateToProps({ history }) {
-  return { history };
+function mapStateToProps({ history, maxLoad }) {
+  return { history, maxLoad };
 }
 
 export default connect(mapStateToProps)(HistoryChart);
