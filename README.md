@@ -30,8 +30,10 @@ Then, launch the application
 $ npm start
 ```
 
-Now you should two new browser window/tab opening and you can see the `frontend` in http://localhost:8080/
+Now you should see two new browser window/tab opening and you can see the `frontend` in http://localhost:8080/
 
 You can see the `backend` in http://localhost:3000/ if you want to see the RESTful endpoint you can goto http://localhost:3000/load
+
+Besides, you can change the `max load` when system load is larger than 100% by change the value in the `input field` and `hit return` or `click submit`
 
 ## Implementation detail
