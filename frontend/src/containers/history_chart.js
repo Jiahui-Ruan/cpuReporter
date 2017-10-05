@@ -9,7 +9,7 @@ class HistoryChart extends Component {
 
   render() {
     return (
-      <Chart data={this.props.history.history} color="black" maxLoad={this.props.maxLoad.maxLoad}/>
+      <Chart data={this.props.history} color="black" maxLoad={this.props.maxLoad}/>
     )
   }
 }

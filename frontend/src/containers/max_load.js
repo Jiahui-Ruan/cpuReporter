@@ -30,6 +30,8 @@ class MaxLoad extends Component {
             className="form-contorl"
             value={this.state.maxLoad}
             onChange={this.onInputChange}
+            type="number"
+            required
           />
           <button className="btn btn-primary" type="submit">Submit</button>
         </form>
