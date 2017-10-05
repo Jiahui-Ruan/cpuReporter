@@ -34,8 +34,10 @@
 #slider .rs-path-color  {
     background-color: #F0C5C5;
 }
-
-.chart {
-  width: 800px;
-  height: 400px;
+.row {
+  margin-bottom: 1%;
+}
+svg {
+    height: 200px;
+    width: 600px;
 }
