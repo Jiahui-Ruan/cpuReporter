@@ -27,9 +27,7 @@ const getLoad = (req, res) => {
     res.status(200).send({
       avgLoad: os.loadavg()[0] / os.cpus().length,
       sumLoad: os.loadavg()[0],
-      cpus: os.cpus().reduce((arr, obj) => {
-        return arr.concat(obj.model)
-      }, [])
+      cpus: os.cpus().length
     })
   }
 }
