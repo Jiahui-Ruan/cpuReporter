@@ -75,7 +75,7 @@ Besides, what if you have a system with multiple CPUs or a multi-core CPU. For e
 
 To understand the load average number, you need to know how many CPUs your system has. A load average of 6.03 would indicate a system with a single CPU was massively overloaded, but it would be fine on a computer with 8 CPUs.
 
-## Backend
+## Back-End
 
 First, as mentioned before, even [run the uptime command](https://www.howtogeek.com/194186/bragging-rights-how-to-find-your-computers-uptime-and-installation-date/) return same result in value, it may have different meaning in various system with different number of cores in CPU.
 
@@ -96,3 +96,13 @@ sumLoad => realtime sum load
 
 cpus => number of cores
 ```
+
+## Front-End
+
+Sticking to the principle of `the simpler is the better`, I use a simple React/Redux boilerplate on [Github](https://github.com/StephenGrider/ReduxSimpleStarter)
+
+As the mockup reference shows, I need to build at least two element and as all the data comes from the `/load` endpoint of backend, I choose to use `Redux` to control the data flow. At the same time, the system load may exceed 100% when the system is busy. In order to better monitor the scale of cpu, I add one more component that has an input filed to change the scale of the upper round slider and the lower history chart.
+
+By the way, to make component more reusable, I separate `containers` which are classes have direct connection to redux and use data from data flow, from `components` which are classes have no direct connection to redux and can be reusable in many places.
+
+During the rapid development process, I got help from a JQuery plugin named [RoundSlider](http://roundsliderui.com/demos.html) and a NPM package named [react-sparklines](https://github.com/borisyankov/react-sparklines). I encapsulate them by adding personalized parameter inside so that it became a reusable component in my project. 
